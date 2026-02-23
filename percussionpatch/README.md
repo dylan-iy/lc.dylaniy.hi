@@ -117,7 +117,7 @@ From there I edited the placement of the horn stab (`hh:4`) and added a low tom 
 
 		--low tom (imitating the "bubble" one shot)
 		s "<~ [~ ~ [~ [~!3 lt:12]] ~]>" # gain 0.39,
-                --low tom delay
+		--low tom delay
 		echo 14 0.05 0.85 $ s "<~ [~ ~ ~ [~ lt:12 ~!2]]>" # gain 0.35,
 
 		--click delay (imitating the "click" one shot)
