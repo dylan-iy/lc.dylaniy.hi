@@ -54,8 +54,10 @@ As it stands this is the code for the patch **without any sample indexing**:
 
 That being said, I think I can make the patch just a little cooler + more authentic to the original if I choose different indices for the side snare & backbeat hat patterns...
 
-After messing with index options for both, I opted to only change the backbeat hat to a more open hat/bell jingle (`hh:8`). I also added a little horn stab every 2 cycles using `hh:4` to imitate a sfx from the groove in the song.  
-**Here is the final patch code**:
+After messing with index options for both, I opted to only change the backbeat hat to a more open hat/bell jingle (`hh:8`). I also added a little horn stab every 2 cycles using `hh:4` to imitate a sfx from the groove in the song.
+
+
+**Here is the "final" patch code (*not rlly final*)**:
 
 	stack [
 		--kick
@@ -80,6 +82,44 @@ After messing with index options for both, I opted to only change the backbeat h
 
 
 I'm including audio clips of the original drums and the estuary patch, both by themselves and alongside the rest of the instrumental. Pretty happy with the results!
+
+## 2/23 4:33p
+
+I worked on the patch more for fun earlier today, and made some small adjustments/additions that I think really bring the whole thing together.
+
+Using `!localview audiomap` I saw there was a `clak` sample I could use to imitate this delayed click from the og drums. To add the delay to the drums I checked the [tidalcycles documentation for `echo`](https://tidalcycles.org/docs/reference/time/#echo).
+
+From there I edited the placement of the horn stab to instead match up with a "yea yea" sound that plays every 2 bars in the original track. Made some final mix adjustments and... duh duhduh daaaaaa!!
+
+### True final patch:
+
+	stack [
+		--kick
+		s "[bd [~ bd ~!2]] [[~ bd] ~] ~ [bd [~ bd ~!2]]" # gain 0.72,
+
+		--backbeat bell
+		s "~ hh:8" # gain 0.93,
+		
+		--clap
+		s "~!2 [~ cp] ~" # gain 0.62,
+
+		--side snare
+		s "[~ sd ~ [~ sd]] [[~ sd] ~!3] [~ sd] ~" # gain 0.56 # pan 0.55,
+
+		--shaker/hat
+		s "[hh!2 [~ hh]!2] [hh!3 [hh!2]] ~ [hh!3 ~]" # gain 0.73 # pan 0.33,
+
+		-------------------------------------------------------
+		-- i know these ones probably don't count but they are cooool (consider commas when adding/removing):
+
+		--click delay
+		echo 27 0.05 0.86 $ s "[~!2 [~ clak/2] ~]" # gain 0.72,
+		-- click layer - grace note
+		echo 2 0.05 0.78 $ s "~!2 [[~ clak/2 ~!3] ~] ~" # gain 0.75,
+
+		--horn stab (imitating the "yea yea" from the song)
+		s "<~ [[~ [hh:4 ~!2 hh:4]] ~ ~ ~]>"# gain 0.70
+	]
 
 ### SOMETHING BOTHERED ME AS I WORKED ON THIS PATCH
 
