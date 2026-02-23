@@ -89,7 +89,7 @@ I worked on the patch more for fun earlier today, and made some small adjustment
 
 Using `!localview audiomap` I saw there was a `clak` sample I could use to imitate this delayed click from the og drums. To add the delay to the drums I checked the [tidalcycles documentation for `echo`](https://tidalcycles.org/docs/reference/time/#echo).
 
-From there I edited the placement of the horn stab to instead match up with a "yea yea" sound that plays every 2 bars in the original track. Made some final mix adjustments and... duh duhduh daaaaaa!!
+From there I edited the placement of the horn stab (`hh:4`) and added a low tom sound (`lt:12`) to mimic the other two one shots with delay that are present in the original drum track. Made some final mix adjustments and... duh duhduh daaaaaa!!
 
 ### True final patch:
 
@@ -110,15 +110,20 @@ From there I edited the placement of the horn stab to instead match up with a "y
 		s "[hh!2 [~ hh]!2] [hh!3 [hh!2]] ~ [hh!3 ~]" # gain 0.73 # pan 0.33,
 
 		-------------------------------------------------------
-		-- i know these ones probably don't count but they are cooool (consider commas when adding/removing):
+		-- i know these one shots probably don't count but they are cooool (consider commas when adding/removing):
 
-		--click delay
+		--horn stab (imitating the "yea" one shot)
+		echo 3 0.125 0.73 $ s "<~ [[~ [hh:4]] ~ ~ ~]>" # gain 0.70,
+
+		--low tom (imitating the "bubble" one shot)
+		s "<~ [~ ~ [~ [~!3 lt:12]] ~]>" # gain 0.39,
+                --low tom delay
+		echo 14 0.05 0.85 $ s "<~ [~ ~ ~ [~ lt:12 ~!2]]>" # gain 0.35,
+
+		--click delay (imitating the "click" one shot)
 		echo 27 0.05 0.86 $ s "[~!2 [~ clak/2] ~]" # gain 0.72,
 		-- click layer - grace note
-		echo 2 0.05 0.78 $ s "~!2 [[~ clak/2 ~!3] ~] ~" # gain 0.68,
-
-		--horn stab (imitating the "yea yea" from the song)
-		echo 3 0.125 0.67 $ s "<~ [[~ [hh:4]] ~ ~ ~]>"# gain 0.70
+		echo 2 0.05 0.78 $ s "~!2 [[~ clak/2 ~!3] ~] ~" # gain 0.68
 	]
 
 ### SOMETHING BOTHERED ME AS I WORKED ON THIS PATCH
