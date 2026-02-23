@@ -1,6 +1,6 @@
 # dylaniy lc percussion patch 👽🥁🎶
 
-**IMPORTANT**: SET ESTUARY TEMPO TO 100 (`!setbpm 100`) AND VIEW TO 2x2 (`!presetview twobytwo`) BEFORE PASTING/RUNNING CODE 
+**IMPORTANT**: SET ESTUARY TEMPO TO 100 (`!setbpm 100`) AND VIEW TO 1x1 (`!presetview fulltexteditor`) BEFORE PASTING/RUNNING CODE 
 
 ## 2/22 6:37a
 Took time to familiarize myself with the basic concepts of minitidal and implementation in  in estuary terminal. Picked a percussion loop to recreate ([1:49 of We're Dumb by salami rose joe louis](https://salamirosejoelouismusic.bandcamp.com/track/we-re-dumb)).
