@@ -95,7 +95,7 @@ From there I edited the placement of the horn stab to instead match up with a "y
 
 	stack [
 		--kick
-		s "[bd [~ bd ~!2]] [[~ bd] ~] ~ [bd [~ bd ~!2]]" # gain 0.68,
+		s "[bd [~ bd ~!2]] [[~ bd] ~] ~ [bd [~ bd ~!2]]" # gain 0.72,
 
 		--backbeat bell
 		s "~ hh:8" # gain 0.93,
@@ -115,10 +115,10 @@ From there I edited the placement of the horn stab to instead match up with a "y
 		--click delay
 		echo 27 0.05 0.86 $ s "[~!2 [~ clak/2] ~]" # gain 0.72,
 		-- click layer - grace note
-		echo 2 0.05 0.78 $ s "~!2 [[~ clak/2 ~!3] ~] ~" # gain 0.75,
+		echo 2 0.05 0.78 $ s "~!2 [[~ clak/2 ~!3] ~] ~" # gain 0.68,
 
 		--horn stab (imitating the "yea yea" from the song)
-		s "<~ [[~ [hh:4 ~!2 hh:4]] ~ ~ ~]>"# gain 0.70
+		echo 3 0.125 0.67 $ s "<~ [[~ [hh:4]] ~ ~ ~]>"# gain 0.70
 	]
 
 ### SOMETHING BOTHERED ME AS I WORKED ON THIS PATCH
