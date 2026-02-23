@@ -1,6 +1,6 @@
 # dylaniy lc percussion patch 👽🥁🎶
 
-**IMPORTANT**: SET ESTUARY TEMPO TO 100 (`!setbpm 100`) BEFORE RUNNING CODE 
+**IMPORTANT**: SET ESTUARY TEMPO TO 100 (`!setbpm 100`) AND VIEW TO 2x2 (`!presetview twobytwo`) BEFORE PASTING/RUNNING CODE 
 
 ## 2/22 6:37a
 Took time to familiarize myself with the basic concepts of minitidal and implementation in  in estuary terminal. Picked a percussion loop to recreate ([1:49 of We're Dumb by salami rose joe louis](https://salamirosejoelouismusic.bandcamp.com/track/we-re-dumb)).
@@ -57,25 +57,7 @@ That being said, I think I can make the patch just a little cooler + more authen
 After messing with index options for both, I opted to only change the backbeat hat to a more open hat/bell jingle (`hh:8`). I also added a little horn stab every 2 cycles using `hh:4` to imitate a sfx from the groove in the song.  
 **Here is the final patch code**:
 
-    stack [
-      --kick
-       s "[bd [~ bd ~!2]] [[~ bd] ~] ~ [bd [~ bd ~!2]]" # gain 0.84,
-
-      --backbeat hat
-       s "~ hh:8" # gain 0.9,
-       
-      --clap
-       s "~!2 [~ cp] ~" # gain 0.7,
-
-      --side snare
-       s "[~ sd ~ [~ sd]] [[~ sd] ~!3] [~ sd] ~" # gain 0.64 # pan 0.55,
-
-      --shaker/hat
-       s "[hh!2 [~ hh]!2] [hh!3 [hh!2]] ~ [hh!3 ~]" # gain 0.87 # pan 0.33,
-
-      --horn stab
-       s "[~!2 [~ hh:4/2] ~]" # gain 0.8
-    ]
+    	
 
 
 
