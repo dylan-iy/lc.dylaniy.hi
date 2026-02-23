@@ -95,7 +95,7 @@ From there I edited the placement of the horn stab to instead match up with a "y
 
 	stack [
 		--kick
-		s "[bd [~ bd ~!2]] [[~ bd] ~] ~ [bd [~ bd ~!2]]" # gain 0.72,
+		s "[bd [~ bd ~!2]] [[~ bd] ~] ~ [bd [~ bd ~!2]]" # gain 0.68,
 
 		--backbeat bell
 		s "~ hh:8" # gain 0.93,
