@@ -11,7 +11,7 @@ I WILL CONCEDE that I hastily made a file URL before realizing I could just load
 The sample I'll be working with for now is a very short little click called **Snappy.wav**:   
  <audio controls>
 
-<source src="https://github.com/your-username/your-repository-name/raw/main/your-audio-file.mp3" type="audio/mpeg">
+<source src="https://github.com/dylan-iy/lc.dylaniy.hi/blob/main/onesample/Snappy.wav" type="audio/mpeg">
 
 </audio>
 
